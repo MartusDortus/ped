@@ -1,0 +1,93 @@
+{block content}
+<div id="layout">
+    <a href="#menu" id="menuLink" class="menu-link">
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <a class="pure-menu-heading" href="#company">PED</a>
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="#home" class="pure-menu-link">Hlavní stánka</a></li>
+                <li class="pure-menu-item"><a href="#about" class="pure-menu-link">Log</a></li>
+
+                <li class="pure-menu-item menu-item-divided pure-menu-selected">
+                    <a href="#" class="pure-menu-link">Tickety</a>
+                </li>
+ 
+                <li class="pure-menu-item"><a href="#contact" class="pure-menu-link">Nový</a></li>
+                <li class="pure-menu-item"><a href="#contact" class="pure-menu-link">Poslední</a></li>
+                <li class="pure-menu-item"><a href="#contact" class="pure-menu-link">Dlouho otevřené</a></li>
+                <li class="pure-menu-item menu-item-divided pure-menu-selected">
+                    <a href="#" class="pure-menu-link">Nápady</a>
+                </li>
+                <li class="pure-menu-item"><a href="#contact" class="pure-menu-link">Vyhledat nápad</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="header">
+            <h1>PED</h1>
+            <h2>PED</h2>
+        </div>
+
+        <div class="content">
+            <h2 class="content-subhead">Denní plán</h2>
+            <p>
+	    	Denní hodinnář
+            </p>
+
+        </div>
+        
+        <h2 class="content-subhead">Tickety</h2>
+	    <div id="ticketsContainer">
+            {foreach $tickets as $t}
+                <div class="ticket">
+                    <div class="pure-g ticketHeader">
+                        <div class="pure-u-2-3">
+                            <h4 class="ticketHeader">{$t->name}</h4>
+                        </div>
+                        <div class="pure-u-1-3 ticketDates">
+                            Created: <span>{$t->created}</span><br>
+                            Deadline: <span>{$t->deadline}</span>
+                        </div>
+                    </div>
+                    <div class="ticketBody">
+                    {$t->description}
+                    </div>
+                </div>
+            {/foreach}
+	    </div>
+
+        <h2 class="content-subhead">Ideas</h2>
+        <p>Wrt smntng</p>
+	    <button></button>
+        </div>
+		<!-- DOCASNY TESTOVACI -->
+		<div class="ticketDetail">
+			<div class="pure-g">
+				<div class="pure-u-2-3 tdHeader">
+					<input type="text" class="tdName" value="OOMGG  ">
+				</div>
+				<div class="pure-u-1-3"> 
+					Created: <span>01.02.1234</span><br>
+					Deadline: <input type="date">
+				</div>
+			
+				<div>
+					<textarea class="tdDescript"></textarea>
+				</div>
+			</div>
+			<hr>
+			<div class="tdNotes">
+				<div class="tdNote pure-g">
+					<div class="pure-u-4-5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Nam sed tellus id magna elementum tincidunt. Duis sapien nunc, commodo et, interdum suscipit, sollicitudin et, dolor. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. In sem justo, commodo ut, suscipit at, pharetra vitae, orci. Maecenas aliquet accumsan leo. Donec iaculis gravida nulla. Vestibulum fermentum tortor id mi. Mauris elementum mauris vitae tortor. Suspendisse nisl. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</div>
+					<div class="pure-u-1-5">Created: <span>01.02.1234</span></div>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+{/block}

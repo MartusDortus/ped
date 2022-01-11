@@ -1,0 +1,18 @@
+<h2 class="content-subhead">Tickety</h2>
+<div id="ticketsContainer">
+	<?php foreach($tickets as $t) : ?>
+		<div class="ticket">
+			<div class="pure-g ticketHeader">
+				<div class="pure-u-2-3">
+					<h4 class="ticketHeader"><?= $name ?></h4>
+				</div>
+				<div class="pure-u-1-3 ticketDates">
+				    Created: <span><?= $created ?></span></br>
+				    Deadline: <span><?= $deadline ?></span>
+				</div>
+			</div>
+			<div class="ticketBody"><?= $description ?></div>
+		</div>
+		
+		<?php endforeach; ?>
+</div>

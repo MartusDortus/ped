@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Osobni ticketovaci a sebemotivacny system">
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
+    <title>Personal Diary Systemos</title>
+    <link rel="stylesheet" href="/include/css/pure-min.css">
+    <link rel="stylesheet" href="/include/css/styles.css">
+    <link rel="stylesheet" href="/include/css/ped.css">
+</head>
+<body>
+	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+
+	{include content}
+
+	{block scripts}
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="  crossorigin="anonymous"></script>
+	<script src="/include/js/ui.js"></script>
+	<script type="text/javascript" src="./include/js/t.js"></script>
+	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+	{/block}
+</body>
+</html>

@@ -1,0 +1,42 @@
+div.ticketsContainer {
+
+}
+div.ticket {
+	margin: .3em;
+}
+div.ticket:hover {
+	background-color:var(--barva5);
+	cursor: pointer;
+}
+h4.ticketHeader {
+	text-align: left;
+	padding-left: .5em;
+	font-size: 1.3em;
+}
+div.ticketDates {
+	margin: auto;
+}
+div.ticketDates>span {
+	text-align: right;
+}
+div.ticketBody {
+	padding: .3em;
+}
+
+/*	TicketDetail	*/
+
+div.ticketDetail {
+	border: white dotted 1px;
+}
+
+input[type=text].tdName {
+	width: 95%;
+	border-radius: 6px;
+	padding: .2em;
+	font-size: 1.2em;
+	margin-top:auto;
+}
+textarea.tdDescript {
+	width: 100%;
+	height: 4em;
+}
