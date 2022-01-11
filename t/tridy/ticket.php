@@ -7,13 +7,19 @@
  */
 Class ticket {
 
-	protected $id;
-	protected $name;
-	protected $description;
-	protected $created;
-	protected $deadline;
-	protected $closed;
-	protected $parent;
+	/**
+	 * TODO:	Rad bych pouzil protected, ale pak se pri generovani JSON stringu
+	 * 			v t/detail.php pridavaji znaky "*" a dela to tam nepekny brajgl;
+	 * RESENI:	Stavet JSON string metodou zde v classe
+	 */
+	public $id;
+	public $name;
+	public $description;
+	public $created;
+	public $deadline;
+	public $closed;
+	public $parent;
+	public $notes;
 
 	public function __get($property) {
 		if(property_exists($this, $property)) {
@@ -34,6 +40,14 @@ Class ticket {
 		$this->deadline = $ticket->deadline;
 		$this->closed = $ticket->closed;
 		$this->parent = $ticket->parent;
+	}
+	/**
+	 * Pokud je argument $notes == null => vypise poznamky
+	 * Pokud je argument $notes == ?array => zapise poznamky do objektu
+	 */
+
+	public function notes(?array $notes = null) {
+			$this->notes = $notes;
 	}
 
 }

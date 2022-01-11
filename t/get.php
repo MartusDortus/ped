@@ -36,15 +36,24 @@ $query = $pdo->prepare($sql);
 $query->execute();
 $result = $query->fetchAll(PDO::FETCH_OBJ);
 
-if($format == "json") {
-	echo json_encode($result);
-} elseif($format == "obj") {
-	$retVal = new TicketCollection($result);
-	var_dump ($retVal);
-	return $result;
-} elseif($format == "arr") {
-        
-	return $result;
+switch ($format) {
+	case 'json':
+		echo json_encode($result);
+		break;
+
+	case 'phpobj':
+		$retVal = new TicketCollection($result);
+		var_dump ($retVal);
+		return $result;
+		break;
+	
+		case 'arr':
+			return $result;
+			break;
+		
+	default:
+		echo "FUCK YOU 2.1"; exit;
+		break;
 }
 
 ?>

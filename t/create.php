@@ -1,3 +1,5 @@
+<!--
+	Zakomentovano .. nemazat, dokud nebude doresen formular /view/ticketCreate.phtml
 <html>
 <head>
 </head>
@@ -11,6 +13,7 @@
 	</form>
 </body>
 </html>
+-->
 <?php
 
 ini_set("display_errors", 1);
@@ -27,7 +30,6 @@ $pdo_p = "mysql:host={$db_server};port={$db_port};dbname={$db_name};charset={$db
 
 $pdo = new PDO($pdo_p, $db_user, $db_pass, NULL);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-var_dump($_POST);
 
 if(isset($_POST["save"])) {
 	$name = $_POST["tName"];
@@ -39,6 +41,5 @@ if(isset($_POST["save"])) {
 	$query->execute();
 
 }
-
 
 ?>

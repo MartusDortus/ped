@@ -1,0 +1,13 @@
+<h2 class="content-subhead">Nový ticket</h2>
+<div id="ticketsContainer">
+    <form method="POST" action="/t/create.php" id="createTicket">
+		<input type="text" placeholder="Název ticketu" id="tName" name="tName">
+        <br><br>
+		<textarea name="tDescription" id="tDescription" placeholder="Popisek ticketu" rows=12 cols="72">Popisek ticketu</textarea>
+        <br><br>
+        <label>deadline</label>
+		<input type="date" id="tDeadline" name="tDeadline">
+        <br>
+		<input type="submit" value="save" id="tSave" name="save">
+	</form>
+</div>
